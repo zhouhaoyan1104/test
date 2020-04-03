@@ -35,5 +35,31 @@
     <p>
         <h1>test</h1>
     </p>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript">
+        wx.onMenuShareTimeline({
+            title: '每天与二十万会员、十八万微粉分享华北商厦优质商品的更新优惠、更潮推荐，专享会员积分查询、送优惠券、网上逛华北', // 分享标题
+            link: 'https://zhouhaoyan1104.github.io/test/test.html', // 分享链接
+            imgUrl: 'http://www.3zq.cn/emoji_dong/images/test_pic.jpg', // 分享图标
+            success: function () { 
+                // 用户确认分享后执行的回调函数
+            },
+            cancel: function () { 
+                // 用户取消分享后执行的回调函数
+            }
+        });
+        wx.onMenuShareQQ({
+        title: '每天与二十万会员、十八万微粉分享华北商厦优质商品', // 分享标题
+        desc: '每天与二十万会员、十八万微粉分享华北商厦优质商品', // 分享描述
+        link: 'https://zhouhaoyan1104.github.io/test/test.html', // 分享链接
+        imgUrl: 'http://www.3zq.cn/emoji_dong/images/test_pic.jpg', // 分享图标
+        success: function () { 
+           // 用户确认分享后执行的回调函数
+        },
+        cancel: function () { 
+           // 用户取消分享后执行的回调函数
+        }
+    });
+    </script>
 </body>
 </html>
