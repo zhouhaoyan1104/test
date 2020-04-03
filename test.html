@@ -37,5 +37,44 @@
     <p>
         <h1>test</h1>
     </p>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <script type="text/javascript">
+        function getThumbnail()
+        {
+            var arrayImgs = [];
+            $("div.article_content img").each(function () {
+                //alert($(this).attr("src"));
+                arrayImgs.push($(this).attr("src"));
+
+            });
+            var width, height, i;
+            var result="";
+            for (i = 0; i < arrayImgs.length; i++)
+            {
+                // 图片地址
+                var img_url = arrayImgs.pop();
+                // 创建对象 
+                var img = new Image();
+                // 改变图片的src 
+                img.src = img_url;
+                // 判断是否有缓存
+                if(img.complete){     
+                    // 打印     
+                    alert('from:complete : width:' + img.width + ',height:' + img.height + ";result:" + result);
+                }else{     
+                    // 加载完成执行     
+                    img.onload = function(){        
+                        // 打印         
+                        alert('from:onload : width:' + img.width + ',height:' + img.height + ";result:" + result);
+                    };
+                }
+                if (img.width / img.height > 0.6 && img.height / img.width < 1.4) {
+                    result = img_url;
+                    break;
+                }
+            }
+            return result;
+        }
+    </script>
 </body>
 </html>
